@@ -1,0 +1,228 @@
+.dropdown-content {
+  padding-right: $dropdown-content-padding-top;
+  padding-left: $dropdown-content-padding-top;
+}
+
+.dropdown-item,
+a.dropdown-item {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  border-radius: $radius-small;
+}
+
+a.dropdown-item {
+  transition: none !important;
+}
+
+a.dropdown-item > .icon {
+  margin-top: 0.125em;
+  margin-bottom: 0.125em;
+}
+
+a.dropdown-item:not(.has-text-centered) > .icon {
+  margin-right: 0.25em;
+  margin-left: -0.25em;
+}
+
+.dropdown-divider {
+  height: $hr-height;
+}
+
+.dropdown > .dropdown-menu.is-size-6,
+.dropdown > .dropdown-menu.is-size-7 {
+  min-width: 8em;
+}
+
+.dropdown.is-fullwidth,
+.dropdown.is-fullwidth > .dropdown-trigger,
+.dropdown.is-fullwidth > .dropdown-menu,
+.dropdown:not(.is-hoverable):not(.has-arrow) > .dropdown-menu {
+  min-width: 100%;
+}
+
+.dropdown > .dropdown-menu {
+  z-index: -5;
+  display: block;
+  opacity: 0;
+  transition: z-index 0.3s linear, opacity 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+.dropdown.has-arrow > .dropdown-menu {
+  transition: z-index 0.8s linear, opacity 0.75s cubic-bezier(0.19, 1, 0.22, 1), transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(-1em);
+}
+
+.dropdown.has-arrow.is-up > .dropdown-menu {
+  transform: translateY(1em);
+}
+
+.dropdown.is-active .dropdown-menu,
+.dropdown.is-hoverable:hover .dropdown-menu {
+  z-index: 20;
+  opacity: 1;
+  transition: z-index 0s, opacity 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translateY(0em) scale(1);
+  pointer-events: auto;
+}
+
+.dropdown.has-arrow.is-active .dropdown-menu,
+.dropdown.has-arrow.is-hoverable:hover .dropdown-menu {
+  transition: z-index 0s, opacity 0.75s cubic-bezier(0.19, 1, 0.22, 1), transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.dropdown-trigger > .field > input {
+  cursor: pointer;
+}
+
+.dropdown:not(.is-iconless) > .dropdown-trigger > .button {
+  padding-right: 2.625em;
+}
+
+.dropdown:not(.is-iconless) > .dropdown-trigger > .button.is-text {
+  padding-right: 2.25em;
+  padding-left: 0.125em;
+}
+
+.dropdown:not(.is-iconless):after,
+.select:not(.is-multiple):not(.is-loading):after {
+  position: absolute;
+  top: 32%;
+  right: 0.875em;
+  margin-top: 0;
+  width: 1em;
+  height: 1em;
+  border: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTRweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNCA4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIHN0cm9rZT0ibm9uZSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMS42MjI3MzM2NiwwLjM0OTQ4NDg5MiBMNyw1LjcyNjc1MTIzIEwxMi4zNzcyNjYzLDAuMzQ5NDg0ODkyIEMxMi43NDg0ODkxLC0wLjAyMTczNzg4MTcgMTMuMzUwMzYwMSwtMC4wMjE3Mzc4ODE3IDEzLjcyMTU4MjksMC4zNDk0ODQ4OTIgQzE0LjA5MjgwNTcsMC43MjA3MDc2NjcgMTQuMDkyODA1NywxLjMyMjU3ODcgMTMuNzIxNTgyOSwxLjY5MzgwMTQ4IEw3LjY3MjE1ODI5LDcuNzQzMjI2MSBDNy4zMDA5MzU1Miw4LjExNDQ0ODg4IDYuNjk5MDY0NDgsOC4xMTQ0NDg4OCA2LjMyNzg0MTcxLDcuNzQzMjI2MSBMMC4yNzg0MTcwODEsMS42OTM4MDE0OCBDLTAuMDkyODA1NjkzNSwxLjMyMjU3ODcgLTAuMDkyODA1NjkzNSwwLjcyMDcwNzY2NyAwLjI3ODQxNzA4MSwwLjM0OTQ4NDg5MiBDMC42NDk2Mzk4NTUsLTAuMDIxNzM3ODgxNyAxLjI1MTUxMDg5LC0wLjAyMTczNzg4MTcgMS42MjI3MzM2NiwwLjM0OTQ4NDg5MiBaIiBmaWxsPSIjMUEwRTIzIiBmaWxsLXJ1bGU9Im5vbnplcm8iPjwvcGF0aD48L2c+PC9zdmc+");
+  background-position: 2px 5px;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  content: "";
+  transition: opacity 0.1s linear, transform 0.15s ease;
+  transform: rotate(0);
+  pointer-events: none;
+}
+
+.select:not(.is-multiple):not(.is-loading):after {
+  background-size: 77%;
+}
+
+.select:not(.is-multiple):not(.is-loading).is-small:after {
+  margin-top: -1px;
+}
+
+.dropdown:not(.is-iconless).is-size-7:after {
+  margin-top: -2px;
+  background-image: url("data:image/svg+xml;base64,DQo8c3ZnIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxNiAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4NCiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICAgICAgPHBhdGggZD0iTTguMDcxMDY3ODEsNi4zMTM3MDg1IEwxMy4zNzQzNjg3LDEuMDEwNDA3NjQgQzEzLjk2MDE1NTEsMC40MjQ2MjEyMDIgMTQuOTA5OTAyNiwwLjQyNDYyMTIwMiAxNS40OTU2ODksMS4wMTA0MDc2NCBDMTYuMDgxNDc1NSwxLjU5NjE5NDA4IDE2LjA4MTQ3NTUsMi41NDU5NDE1NSAxNS40OTU2ODksMy4xMzE3Mjc5OCBMOS4xMzE3Mjc5OCw5LjQ5NTY4OTAxIEM4LjU0NTk0MTU1LDEwLjA4MTQ3NTUgNy41OTYxOTQwOCwxMC4wODE0NzU1IDcuMDEwNDA3NjQsOS40OTU2ODkwMSBMMC42NDY0NDY2MDksMy4xMzE3Mjc5OCBDMC4wNjA2NjAxNzE4LDIuNTQ1OTQxNTUgMC4wNjA2NjAxNzE4LDEuNTk2MTk0MDggMC42NDY0NDY2MDksMS4wMTA0MDc2NCBDMS4yMzIyMzMwNSwwLjQyNDYyMTIwMiAyLjE4MTk4MDUyLDAuNDI0NjIxMjAyIDIuNzY3NzY2OTUsMS4wMTA0MDc2NCBMOC4wNzEwNjc4MSw2LjMxMzcwODUgWiIgaWQ9IlBhdGgiIGZpbGw9IiMxQTBFMjMiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPg0KICAgIDwvZz4NCjwvc3ZnPg==");
+}
+
+// Inverted
+.dropdown.is-inverted .dropdown-content {
+  box-shadow: 0 0 5px 0 rgba($black, 0.2), 0 4px 6px -8px rgba($black, 0.5), 0 6px 30px -8px rgba($black, 0.6);
+}
+
+.dropdown:not(.is-iconless).is-inverted:after,
+.select:not(.is-loading).is-inverted {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS42MjMuMzVMNyA1LjcyNiAxMi4zNzcuMzQ5YS45NS45NSAwIDAxMS4zNDUgMS4zNDVsLTYuMDUgNi4wNWEuOTUuOTUgMCAwMS0xLjM0NCAwbC02LjA1LTYuMDVBLjk1Ljk1IDAgMDExLjYyMy4zNDl6IiBmaWxsPSIjRDFCOUUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=");
+}
+
+.dropdown:not(:hover):after,
+.select:not(:hover):after {
+  opacity: 0.6;
+}
+
+.dropdown.is-active:not(.is-iconless):after {
+  transform: rotate(180deg);
+}
+
+.select:not(.field, .is-danger, .is-warning, .is-info, .is-success) select:hover:not(:focus) {
+  border-color: transparent;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div {
+  position: relative;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div:before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 0.625em solid transparent;
+  border-right-color: transparent !important;
+  border-left: 0.625em solid transparent;
+  border-left-color: transparent !important;
+  content: "";
+}
+
+.dropdown:not(.is-up) > .dropdown-menu > div:before {
+  top: -0.5em;
+  border-bottom: 0.625em solid $white;
+}
+
+.dropdown.is-up.has-arrow > .dropdown-menu > div:before {
+  bottom: -0.5em;
+  border-top: 0.625em solid $white;
+}
+
+.dropdown.has-arrow:not(.is-right) > .dropdown-menu > div:before {
+  left: 1em;
+}
+
+.dropdown.has-arrow.is-centered > .dropdown-menu > div:before {
+  left: 50%;
+  margin-left: -0.5em;
+}
+
+.dropdown.has-arrow.is-right > .dropdown-menu > div:before {
+  right: 1em;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-dark:before {
+  border-color: $dark;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-primary:before {
+  border-color: $primary;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-info:before {
+  border-color: $info;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-black:before {
+  border-color: rgba($black, 0.92);
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-black {
+  background-color: rgba($black, 0.92) !important;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-primary-gradient:before {
+  border-color: $primary;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-care-gradient:before {
+  border-color: $care;
+}
+
+.dropdown.has-arrow > .dropdown-menu > div.has-background-claim-gradient:before {
+  border-color: mix($yellow, $claim, 20);
+}
+
+.dropdown.has-arrow.is-hoverable.is-right > .dropdown-menu > div,
+.dropdown.has-arrow.is-hoverable.is-left > .dropdown-menu > div,
+.dropdown.has-arrow.is-hoverable.is-centered > .dropdown-menu > div,
+.dropdown.has-arrow.is-hoverable.is-up > .dropdown-menu > div {
+  max-width: 18rem;
+}
+
+.dropdown.has-arrow.is-hoverable.is-centered > .dropdown-menu {
+  right: 50%;
+  left: 50%;
+  transform-origin: 0;
+}
+
+.dropdown.has-arrow.is-hoverable.is-centered > .dropdown-menu > div {
+  transform: translate(-51%);
+}

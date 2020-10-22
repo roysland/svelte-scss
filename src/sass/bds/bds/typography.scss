@@ -1,0 +1,129 @@
+html,
+body {
+  letter-spacing: -0.0125em;
+}
+
+::selection {
+  background: rgba(140, 80, 185, 0.2);
+}
+
+/* Hand-drawn Font family */
+.is-family-hand {
+  font-size: 1.25em;
+  font-family: "Caveat", cursive;
+}
+
+/* Titles */
+h1.title {
+  font-size: $size-1;
+}
+
+h2.title {
+  font-size: $size-2;
+}
+
+h3.title {
+  font-size: $size-3;
+}
+
+h4.title {
+  font-size: $size-4;
+}
+
+h5.title {
+  font-size: $size-5;
+}
+
+h6.title {
+  font-size: $size-6;
+}
+
+// Force/Adjust Crimson Font size
+h1.title:not(.is-family-primary),
+.is-1.title:not(.is-family-primary),
+.is-1.subtitle.is-family-secondary,
+.is-size-1.is-family-secondary {
+  font-size: calc(#{$size-1}+10px) !important;
+}
+
+h2.title:not(.is-family-primary),
+.is-2.title:not(.is-family-primary),
+.is-2.subtitle.is-family-secondary,
+.is-size-2.is-family-secondary {
+  font-size: calc(#{$size-2}+8px) !important;
+}
+
+h3.title:not(.is-family-primary),
+.is-3.title:not(.is-family-primary),
+.is-3.subtitle.is-family-secondary,
+.is-size-3.is-family-secondary {
+  font-size: calc(#{$size-3}+5px) !important;
+}
+
+h4.title:not(.is-family-primary),
+.is-4.title:not(.is-family-primary),
+.is-4.subtitle.is-family-secondary,
+.subtitle.is-family-secondary,
+.is-size-4.is-family-secondary {
+  font-size: calc(#{$size-4}+3px) !important;
+}
+
+h5.title:not(.is-family-primary),
+.is-5.title:not(.is-family-primary),
+.is-5.subtitle.is-family-secondary,
+.is-size-5.is-family-secondary {
+  font-size: calc(#{$size-5}+2px) !important;
+}
+
+h6.title:not(.is-family-primary),
+.is-6.title:not(.is-family-primary),
+.is-6.subtitle.is-family-secondary,
+.is-size-6.is-family-secondary {
+  font-size: calc(#{$size-6}+2px) !important;
+}
+
+.is-size-7.is-family-secondary {
+  font-size: calc(#{$size-7}+2px) !important;
+}
+
+.title,
+.subtitle {
+  letter-spacing: -0.0225em;
+}
+
+.title.is-1.is-family-secondary,
+.subtitle.is-1.is-family-secondary,
+.is-size-1.is-family-secondary,
+.title.is-2.is-family-secondary,
+.subtitle.is-2.is-family-secondary,
+.is-size-2.is-family-secondary,
+.title.is-3.is-family-secondary,
+.subtitle.is-3.is-family-secondary,
+.is-size-3.is-family-secondary {
+  letter-spacing: -0.03125em;
+}
+
+.has-text-weight-bolder {
+  font-weight: 900 !important;
+}
+
+u {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDMgNSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PHBhdGggc3Ryb2tlPSIjYWE1MGI1IiBzdHJva2Utb3BhY2l0eT0iMzAlIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMyIgZD0iTTIsMy4xMDgwNTIzNiBDMTYuNzI3MDE0NCwyLjU1NDY4MzI4IDMxLjQ0NjY0NTUsMi43MTY5ODg5MSA0Ni4xOTA0ODg0LDIuNDg5MTUyOSBDNzcuODE4Mjc2OSwyLjAwMDQwOTk0IDEwMS4yNjczNCwyLjAwMDQwOTk0IDE0MC41NzkzNDUsMi40ODkxNTI5Ii8+PC9zdmc+);
+  background-position: bottom;
+  background-size: 100% 0.125em;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: inherit;
+  font-style: normal;
+}
+
+em {
+  border-radius: 1em 0.25em 1em 0.25em;
+  background-image: linear-gradient(90deg, rgba($yellow, 0.1), rgba($yellow, 0.5) 40%, rgba($yellow, 0.35) 85%, rgba($yellow, 0.15));
+  font-style: normal;
+}
+
+em.is-primary {
+  background-image: linear-gradient(90deg, rgba(140, 80, 185, 0.25), rgba(91, 37, 133, 0.7) 30%, rgba(140, 80, 185, 0.5) 95%, rgba(140, 80, 185, 0.2));
+}

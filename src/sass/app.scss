@@ -1,0 +1,21 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+// @import 'variables';
+
+// Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+
+@import "bds/bds_vars.scss";
+@import "bds/bds.scss";
+
+progress.progress.refresher {
+    border-radius: 0 !important;
+    background-image: repeating-linear-gradient(45deg,#3cb08b,#3cb08b 10px,#009688 0,#009688 20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}

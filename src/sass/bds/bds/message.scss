@@ -1,0 +1,124 @@
+$message-body-padding: 1em 1.5em !default;
+$message-body-border-width: 0 !default;
+
+.message {
+  padding: $message-body-padding;
+  border-color: rgba($black, 0.1);
+  border-radius: $radius-large;
+  background-color: $white;
+  font-size: $size-normal;
+}
+
+.message.is-warning {
+  border-color: transparent;
+  background-color: rgba($warning, 0.075);
+  color: mix($claim-dark, $warning, 60);
+}
+
+.message.is-info {
+  border-color: transparent;
+  background-color: rgba($info, 0.075);
+  color: $info;
+}
+
+.message.is-success {
+  border-color: transparent;
+  background-color: rgba($success, 0.075);
+  color: mix($care-dark, $success, 30);
+}
+
+.message.is-danger {
+  border-color: transparent;
+  background-color: rgba($danger, 0.075);
+  color: $danger;
+}
+
+.message.is-dark {
+  border-color: transparent;
+  background-color: rgba($black, 0.075);
+}
+
+.message.is-primary {
+  border-color: transparent;
+  background-color: rgba(mix($primary, $primary-dark, 25), 0.95);
+}
+
+.message.is-primary,
+.message.is-primary > .title {
+  color: white;
+}
+
+// ——— Modal Noti Message —————————
+
+.modal > .message {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  margin: 1.5em 0;
+  max-width: 30rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1em;
+  box-shadow: 0 6px 25px -8px rgba($black, 0.3);
+  font-weight: 500;
+  opacity: 0;
+  user-select: none;
+}
+
+.modal > .message.is-success,
+.modal > .message.is-info,
+.modal > .message.is-danger,
+.modal > .message.is-warning {
+  color: white;
+}
+
+.modal > .message.is-success {
+  background-color: rgba(mix($care-dark, $success, 20), 0.8);
+}
+
+.modal > .message.is-info {
+  background-color: rgba($info, 0.8);
+}
+
+.modal > .message.is-warning {
+  background-color: rgba(mix($claim-dark, $warning, 10), 0.8);
+}
+
+.modal > .message.is-danger {
+  background-color: rgba($danger, 0.8);
+}
+
+.modal.is-active > .message {
+  bottom: 0;
+  left: 1.5em;
+  opacity: 1;
+  animation: fadeIn 0.5s 1;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.modal.is-active > .message.is-medium,
+.modal.is-active > .message.is-large {
+  animation: moveIn 0.5s 1;
+}
+
+@keyframes moveIn {
+  from {
+    left: -2em;
+    opacity: 0;
+  }
+
+  to {
+    left: 1.5em;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

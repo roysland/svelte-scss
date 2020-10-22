@@ -1,0 +1,173 @@
+.tabs {
+  overflow: visible;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.tabs > ul > li {
+  position: relative;
+  font-weight: 500;
+}
+
+.tabs > ul > li > a {
+  border-bottom: none;
+}
+
+.tabs:not(.is-boxed) > li:first-child > a {
+  padding-left: 0.75em;
+}
+
+.tabs:not(.is-boxed):not(.is-toggle) > ul > li > a:after {
+  position: absolute;
+  right: 50%;
+  bottom: -$tabs-border-bottom-width;
+  left: 50%;
+  height: 2px;
+  background-color: $primary;
+  content: "";
+  transition: left 0.15s ease, right 0.15s ease;
+}
+
+.tabs:not(.is-boxed) > ul > li.is-active > a:after {
+  right: 25%;
+  left: 25%;
+}
+
+.tabs.is-fullwidth:not(.is-boxed) > ul > li.is-active > a:after {
+  right: 0%;
+  left: 0%;
+}
+
+.tabs.is-hanging > ul {
+  border-top-width: $tabs-border-bottom-width;
+  border-top-style: $tabs-border-bottom-style;
+  border-top-color: $tabs-border-bottom-color;
+  border-bottom: none;
+}
+
+.tabs.is-hanging a {
+  border: none;
+}
+
+.tabs.is-hanging > ul > li a:after {
+  top: 0;
+  bottom: auto;
+}
+
+.tabs.is-boxed a {
+  margin-bottom: -1px;
+  padding: 0.625em 1.125em 0.875em;
+  border-width: 2px;
+}
+
+.tabs.is-toggle a {
+  padding: 0.625em 1.125em 0.75em;
+  background-color: $tabs-toggle-link-hover-background-color;
+  color: $grey;
+}
+
+.tabs.is-small.is-toggle a {
+  padding: 0.375em 1em 0.375em;
+}
+
+.tabs.is-toggle li:hover a {
+  color: $tabs-toggle-link-active-color;
+}
+
+.tabs.is-toggle:not(.has-hr) li {
+  background-color: $tabs-toggle-link-hover-background-color;
+}
+
+.tabs.is-toggle li.is-active a {
+  border-radius: $tabs-toggle-link-radius;
+}
+
+.tabs.is-toggle li:first-child {
+  border-radius: $tabs-toggle-link-radius 0 0 $tabs-toggle-link-radius;
+}
+
+.tabs.is-toggle li:last-child {
+  border-radius: 0 $tabs-toggle-link-radius $tabs-toggle-link-radius 0;
+}
+
+/* With movable white HR */
+// Support up to 3 tabs
+
+.tabs.is-toggle.has-hr > ul {
+  position: relative;
+  border-radius: 9px;
+  background-color: rgba($dark, 0.075);
+}
+
+.tabs.is-toggle.has-hr > ul > hr {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  visibility: initial !important;
+  margin: 0.25em 0.25em 0;
+  height: calc(100% - .5em);
+  border-radius: 0.5em;
+  background-color: white;
+  box-shadow: 0 0.125em 0.375em rgba($black, 0.1);
+  transition: left 0.25s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.tabs.is-toggle.has-hr a {
+  z-index: 1;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.tabs.is-toggle.has-hr li.is-active {
+  background-color: transparent;
+}
+
+.tabs.is-toggle.has-hr li.is-active:nth-child(1) ~ hr {
+  left: 0;
+}
+
+.tabs.is-toggle.has-hr li.is-active:nth-child(2) ~ hr {
+  left: calc(50% -.125em);
+}
+
+.tabs.is-toggle.has-hr li.is-active:nth-child(2) + li ~ hr {
+  left: calc(33% -.125em);
+}
+
+.tabs.is-toggle.has-hr li.is-active:nth-child(3) ~ hr {
+  left: calc(66% -.125em);
+}
+
+.tabs.is-toggle.has-hr li:nth-child(1) ~ hr {
+  width: 100%;
+}
+
+.tabs.is-toggle.has-hr li:nth-child(2) ~ hr {
+  width: 50%;
+}
+
+.tabs.is-toggle.has-hr li:nth-child(3) ~ hr {
+  width: 33%;
+}
+
+// Rounded toggle
+.tabs.is-toggle.is-toggle-rounded li:first-child {
+  border-radius: $radius-rounded 0 0 $radius-rounded;
+}
+
+.tabs.is-toggle.is-toggle-rounded li:last-child {
+  border-radius: 0 $radius-rounded $radius-rounded 0;
+}
+
+.tabs.is-toggle.is-toggle-rounded li:first-child > a {
+  border-radius: 2em $tabs-toggle-link-radius $tabs-toggle-link-radius 2em;
+}
+
+.tabs.is-toggle.is-toggle-rounded li:last-child > a {
+  border-radius: $tabs-toggle-link-radius 2em 2em $tabs-toggle-link-radius;
+}
+
+.tabs.is-toggle.is-toggle-rounded.has-hr > ul,
+.tabs.is-toggle.is-toggle-rounded.has-hr > ul > hr {
+  border-radius: $radius-rounded;
+}

@@ -1,0 +1,59 @@
+.tag:not(body) {
+  min-width: 1.875em;
+  height: 1.875em;
+  font-weight: $weight-medium;
+  line-height: 1.25;
+}
+
+.tag:not(body) {
+  padding-right: 0.625em;
+  padding-left: 0.625em;
+}
+
+span.tag + .tag {
+  margin-left: 0.125em;
+}
+
+.tag.is-small,
+.tag.is-tiny {
+  font-size: $size-7;
+  border-radius: $radius-small;
+}
+
+.tag.is-tiny {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  height: 1.625em;
+}
+
+.tag.is-glowing.is-primary {
+  box-shadow: 0 0.25em 1em -0.25em rgba($primary, 0.75);
+}
+
+.tag.is-glowing.is-success {
+  box-shadow: 0 0.25em 1em -0.25em rgba($success, 0.75);
+}
+
+.tag.is-glowing.is-info {
+  box-shadow: 0 0.25em 1em -0.25em rgba($info, 0.5);
+}
+
+.tag.is-glowing.is-danger {
+  box-shadow: 0 0.25em 1em -0.25em rgba($danger, 0.75);
+}
+
+.tag.is-glowing.is-warning {
+  box-shadow: 0 0.25em 1em -0.25em rgba($warning, 0.7);
+}
+
+.tag.is-care {
+  background-color: mix($care-dark, $care, 5);
+  box-shadow: 0 0.25em 1em -0.25em rgba($care, 0.8);
+  color: white;
+}
+
+.tag.is-claim {
+  background-color: mix($orange, $claim, 15);
+  box-shadow: 0 0.25em 1em -0.25em rgba($claim, 0.8);
+  color: white;
+}

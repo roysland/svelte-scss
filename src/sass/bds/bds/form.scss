@@ -1,0 +1,350 @@
+/* Input field */
+.input,
+.textarea,
+select,
+.select > select,
+.field > .checkbox,
+.field > .radio {
+  transition: border-color 0.1s ease-out, color 0.1s linear, background-color 0.25s linear;
+}
+
+.input:not(:focus),
+.textarea:not(:focus) {
+  transition: border-color 0.1s ease-out, color 0.1s linear, background-color 0.01s linear;
+}
+
+.input:focus:not([readonly]),
+.textarea:focus:not([readonly]) {
+  background-color: $white;
+}
+
+.input:focus[readonly],
+.textarea:focus[readonly] {
+  border-color: $border-hover;
+}
+
+.textarea {
+  padding-left: calc(.875em - 1px);
+}
+
+// Caret color
+.input,
+.textarea {
+  caret-color: $primary;
+}
+
+.is-success,
+.is-success > .input,
+.is-success > .textarea {
+  caret-color: $success;
+}
+
+.is-info,
+.is-info > .input,
+.is-info > .textarea {
+  caret-color: $info;
+}
+
+.is-danger,
+.is-danger > .input,
+.is-danger > .textarea {
+  caret-color: $danger;
+}
+
+.field {
+  position: relative;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.label:not(:last-child) {
+  margin-bottom: 0.25em;
+}
+
+form .field {
+  border-radius: $control-radius;
+  background-color: white;
+}
+
+.label {
+  letter-spacing: $menu-label-letter-spacing;
+  font-size: $menu-label-font-size;
+}
+
+.field > .label {
+  position: absolute;
+  top: 0.375em;
+  left: calc(.25em + 1px);
+  z-index: 3;
+  padding-top: $control-padding-vertical;
+  padding-right: $control-padding-horizontal;
+  padding-bottom: $control-padding-vertical;
+  padding-left: $control-padding-horizontal;
+  transition: color 0.1s linear;
+  pointer-events: none;
+}
+
+.field:hover > .label,
+.field.is-warning > .label {
+  color: mix($black, $grey, 5);
+}
+
+.field:not(.select) > .label {
+  cursor: text;
+}
+
+.field.select > .label {
+  cursor: pointer;
+}
+
+.field:focus-within > .label,
+.field > .input:focus + .label {
+  color: $primary;
+}
+
+.field > input,
+.field > textarea,
+.field.select > select,
+.field.select > select:active,
+.field > label.checkbox,
+.field > label.radio {
+  min-height: 4em;
+  border-color: rgba($black, 0.125);
+  background-color: transparent !important;
+}
+
+.field > input,
+.field > textarea,
+.field > select {
+  padding-top: 2.125em;
+  padding-bottom: 0.75em;
+  width: 100%;
+  height: auto;
+}
+
+.field > input:hover:not(:focus),
+.field > textarea:hover:not(:focus),
+.field.select > select:hover,
+.field.select > select:focus,
+.field > label.checkbox:hover:not(:active),
+.field > label.radio:hover:not(:active) {
+  border-color: $grey-light;
+}
+
+.field > input,
+.field > input:focus,
+.field > input[readonly],
+.field > textarea,
+.field > textarea:focus,
+.field > textarea[readonly],
+.field > select,
+.field > select:focus,
+.field > select[readonly],
+.field > label.checkbox,
+.field > label.radio {
+  box-shadow: 0 0.1875em 0.125em rgba($dark, 0.03) !important;
+}
+
+.field.select {
+  display: block;
+  max-width: none;
+  height: auto;
+}
+
+.field.select:after {
+  top: 39% !important;
+  right: 1.5rem !important;
+}
+
+.field > .checkbox,
+.field > .radio {
+  padding: 1.5em 1.125em;
+  width: 100%;
+  color: $label-color;
+
+  @extend %input;
+}
+
+.field > .checkbox > input:checked ~ span,
+.field > .radio > input:checked ~ span {
+  color: $grey-darker;
+}
+
+.field > .checkbox > .checkbox-mark,
+.field > .radio > .radio-mark {
+  top: calc( 1em + 1px );
+  left: 1em;
+}
+
+.field > .checkbox.is-toggle > .checkbox-mark {
+  top: 1em;
+}
+
+.field > .checkbox.is-right > .checkbox-mark {
+  right: 1em;
+  left: initial;
+}
+
+.field > .checkbox.is-right > input {
+  width: 1px;
+}
+
+.field > .label > span,
+label.label > span {
+  color: $label-color;
+  text-transform: none;
+  font-weight: $weight-normal;
+}
+
+.field.is-primary > .input,
+.field.is-primary > .textarea,
+.field.is-primary > select {
+  border-color: $primary !important;
+}
+
+.field.is-danger > .input,
+.field.is-danger > .textarea,
+.field.is-danger > select {
+  border-color: $danger !important;
+}
+
+.field.is-info > .input,
+.field.is-info > .textarea,
+.field.is-info > select {
+  border-color: $info !important;
+}
+
+.field.is-success > .input,
+.field.is-success > .textarea,
+.field.is-success > select {
+  border-color: $success !important;
+}
+
+// Required field
+.field.is-required:before {
+  position: absolute;
+  top: 2.75em;
+  left: -0.25em;
+  z-index: 10;
+  width: 10px;
+  height: 10px;
+  border-radius: $radius-rounded;
+  background-color: $warning;
+  box-shadow: 0 0 0 0 rgba($warning, 0);
+  content: "";
+  animation: blinking 2s linear infinite;
+  pointer-events: none;
+}
+
+// Field with warning
+.field.is-warning > input,
+.field.is-warning > textarea,
+.field.select.is-warning,
+.field.is-warning > select {
+  background-color: mix($claim-light, $warning-light, 5) !important;
+}
+
+/* Icon */
+.control.has-icons-left .icon,
+.control.has-icons-right .icon {
+  padding: 0.75em;
+  fill: $grey;
+}
+
+.control.has-icons-left .icon {
+  margin-left: 0.125em;
+}
+
+.control.has-icons-right .icon {
+  margin-right: 0.25em;
+}
+
+@keyframes blinking {
+  0% {
+    box-shadow: 0 0 0 0 rgba($warning, 0);
+  }
+
+  60% {
+    box-shadow: 0 0 0 0.25rem rgba($warning, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0.375rem rgba($warning, 0);
+  }
+}
+
+// Compact form field (in gapless columns)
+.is-gapless > .column .field {
+  margin: 0 -2px -2px 0;
+}
+
+.is-gapless > .column .field,
+.is-gapless > .column .field > input,
+.is-gapless > .column .field > textarea,
+.is-gapless > .column .field > select,
+.is-gapless > .column .field > label {
+  border-radius: 0;
+}
+
+.is-gapless > .column .field > input:focus,
+.is-gapless > .column .field > textarea:focus,
+.is-gapless > .column .field > select:focus,
+.is-gapless > .column .field > label:active {
+  z-index: 2;
+}
+
+.is-gapless > .column .field > input:hover,
+.is-gapless > .column .field > textarea:hover,
+.is-gapless > .column .field > select:hover,
+.is-gapless > .column .field > label:hover {
+  z-index: 1;
+}
+
+.is-gapless > .column:first-child .field,
+.is-gapless > .column:first-child .field > .input,
+.is-gapless > .column:first-child .field > .textarea,
+.is-gapless > .column:first-child .field > select,
+.is-gapless > .column:first-child .field > label {
+  border-top-left-radius: $control-radius;
+}
+
+.is-gapless > .is-12:first-child .field,
+.is-gapless > .is-12:first-child .field > .input,
+.is-gapless > .is-12:first-child .field > .textarea,
+.is-gapless > .is-12:first-child .field > select,
+.is-gapless > .is-12:first-child .field > label,
+.is-gapless > .column:not(.is-12):first-child + .column .field,
+.is-gapless > .column:not(.is-12):first-child + .column .field > .input,
+.is-gapless > .column:not(.is-12):first-child + .column .field > .textarea,
+.is-gapless > .column:not(.is-12):first-child + .column .field > select,
+.is-gapless > .column:not(.is-12):first-child + .column .field > label {
+  border-top-right-radius: $control-radius;
+}
+
+.is-gapless > .column:last-child .field,
+.is-gapless > .column:last-child .field > .input,
+.is-gapless > .column:last-child .field > .textarea,
+.is-gapless > .column:last-child .field > select,
+.is-gapless > .column:last-child .field > label {
+  border-bottom-right-radius: $control-radius;
+}
+
+.is-gapless > .is-12:last-child .field,
+.is-gapless > .is-12:last-child .field > .input,
+.is-gapless > .is-12:last-child .field > .textarea,
+.is-gapless > .is-12:last-child .field > select,
+.is-gapless > .is-12:last-child .field > label,
+.is-gapless > .column:not(.is-12):nth-last-child(2) .field,
+.is-gapless > .column:not(.is-12):nth-last-child(2) .field > .input,
+.is-gapless > .column:not(.is-12):nth-last-child(2) .field > .textarea,
+.is-gapless > .column:not(.is-12):nth-last-child(2) .field > select,
+.is-gapless > .column:not(.is-12):nth-last-child(2) .field > label,
+.is-gapless > .is-12 + .column:last-child .field,
+.is-gapless > .is-12 + .column:last-child .field > .input,
+.is-gapless > .is-12 + .column:last-child .field > .textarea,
+.is-gapless > .is-12 + .column:last-child .field > select,
+.is-gapless > .is-12 + .column:last-child .field > label {
+  border-bottom-left-radius: $control-radius;
+}

@@ -1,0 +1,1103 @@
+// Style removing classes
+.is-motionless {
+  transition: none !important;
+  animation: none !important;
+}
+
+.is-decorationless {
+  text-decoration: none !important;
+}
+
+.is-borderless {
+  border: none !important;
+}
+
+.is-backgroundless {
+  background: none !important;
+  background-color: transparent !important;
+}
+
+.has-pointer {
+  cursor: pointer !important;
+}
+
+@media print {
+  .is-hidden-print {
+    display: none !important;
+  }
+}
+
+.is-ephemeral {
+  max-height: 0;
+  opacity: 0;
+  overflow-y: hidden;
+  animation: vanish 4s linear 1;
+}
+
+.is-mask {
+  mix-blend-mode: screen;
+}
+
+@keyframes vanish {
+  0% {
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  75% {
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  99% {
+    max-height: 100%;
+    opacity: 0;
+  }
+
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+// Dimmer modifiers
+
+.has-background-white.is-dimmed {
+  background-color: rgba($white, 0.4) !important;
+}
+
+.has-background-dark.is-dimmed {
+  background-color: rgba($dark, 0.25) !important;
+}
+
+.has-text-white.is-dimmed {
+  color: rgba($white, 0.55) !important;
+}
+
+.has-text-black-ter.is-dimmed {
+  color: rgba($black-ter, 0.5) !important;
+}
+
+// Radius removers
+.is-radiusless-tl,
+.is-radiusless-l,
+.is-radiusless-t {
+  border-top-left-radius: 0 !important;
+}
+
+.is-radiusless-tr,
+.is-radiusless-r,
+.is-radiusless-t {
+  border-top-right-radius: 0 !important;
+}
+
+.is-radiusless-bl,
+.is-radiusless-l,
+.is-radiusless-b {
+  border-bottom-left-radius: 0 !important;
+}
+
+.is-radiusless-br,
+.is-radiusless-r,
+.is-radiusless-b {
+  border-bottom-right-radius: 0 !important;
+}
+
+// Rotation (twisted Look)
+.is-twisted {
+  transform: rotate(-0.5deg);
+}
+
+.is-twisted-bis {
+  transform: rotate(0.75deg);
+}
+
+.is-twisted-ter {
+  transform: rotate(-0.75deg);
+}
+
+.is-twisted-quater {
+  transform: rotate(1deg);
+}
+
+.is-twisted-odd {
+  transform: rotate(-4deg);
+}
+
+.is-twisted-odd-bis {
+  transform: rotate(3deg);
+}
+
+.is-twisted,
+.is-twisted-bis,
+.is-twisted-ter,
+.is-twisted-quater,
+.is-twisted-odd,
+.is-twisted-odd-bis {
+  transition: transform 0.1s ease-in-out;
+}
+
+// Animation modifier
+.is-shaked {
+  animation: shake 1s ease-in-out;
+
+  transform-origin:center center {}
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  12.5% {
+    transform: rotate(10deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  37.5% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  62.5% {
+    transform: rotate(10deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  87.5% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// ADJUSTMENTS TO BULMA :
+
+.help {
+  padding-left: 0.125rem;
+}
+
+.is-success ~ .help {
+  color: $success;
+}
+
+.is-danger ~ .help {
+  color: $danger;
+}
+
+.is-warning ~ .help {
+  color: $warning;
+}
+
+.is-info ~ .help {
+  color: $info;
+}
+
+.delete.is-inverted {
+  background-color: bulmaRgba($scheme-invert, 0);
+
+  &::before,
+  &::after {
+    background-color: $grey-dark;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: bulmaRgba($scheme-invert, 0.075);
+  }
+
+  &:active {
+    background-color: bulmaRgba($scheme-invert, 0.125);
+  }
+}
+
+.modal-close {
+  background-color: bulmaRgba($scheme-main, 0.5);
+
+  &::before,
+  &::after {
+    background-color: $text;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: bulmaRgba($grey-lighter, 0.75);
+  }
+
+  &:active {
+    background-color: bulmaRgba($grey-lighter, 1);
+  }
+}
+
+.delete.is-huge {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  max-width: 2.25rem;
+  max-height: 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.modal-close {
+  max-width: $modal-close-dimensions;
+  max-height: $modal-close-dimensions;
+}
+
+// Table
+.table thead th {
+  text-align: left;
+}
+
+.table thead td,
+.table thead th {
+  padding: 0.625em 0.875em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75em;
+}
+
+.table tr.is-selected {
+  color: $primary;
+}
+
+// Progress bar
+.progress.is-thin {
+  height: 0.625rem;
+}
+
+// Code
+pre {
+  border-left: 0.375em solid rgba($primary-dark, 0.08);
+}
+
+// SPECIAL BACKGROUNDS
+.has-background-primary-gradient {
+  background: linear-gradient(-45deg, $purple 0%, mix($primary-dark, $primary, 50) 100%);
+}
+
+.has-background-primary-gradient-light {
+  background: linear-gradient(-30deg, $purple-lighter 20%, $primary-light 300%);
+}
+
+.has-background-care-gradient {
+  background: linear-gradient(-45deg, $turquoise -15%, $care 95%);
+}
+
+.has-background-care-gradient-light {
+  background: linear-gradient(-30deg, $turquoise-lighter 0%, $care-light 300%);
+}
+
+.has-background-primary-care-gradient {
+  background: linear-gradient(-45deg, $care -5%, mix($purple, $primary, 25) 95%);
+}
+
+.has-background-claim-gradient {
+  background: linear-gradient(-45deg, $orange-light 5%, mix($yellow, $claim, 15) 100%);
+}
+
+.has-background-claim-gradient-light {
+  background: linear-gradient(-30deg, $orange-lighter 0%, $claim-light 300%);
+}
+
+.has-background-primary-claim-gradient {
+  background: linear-gradient(-45deg, $claim -10%, $purple 100%);
+}
+
+.has-background-info-gradient {
+  background: linear-gradient(-45deg, $cyan-lighter -75%, mix($primary, $primary-lighter, 10) 90%);
+}
+
+// BLURED BACKGROUND
+@supports(-webkit-backdrop-filter: blur()) {
+  .has-background-blur {
+    -webkit-backdrop-filter: blur(1.5rem);
+  }
+}
+
+@supports(backdrop-filter: blur()) {
+  .has-background-blur {
+    backdrop-filter: blur(1.5rem);
+  }
+}
+
+@supports(-webkit-backdrop-filter: blur()) {
+  .has-background-blur.has-background-white {
+    background-color: rgba(white, 0.75) !important;
+  }
+}
+
+@supports(backdrop-filter: blur()) {
+  .has-background-blur.has-background-white {
+    background-color: rgba(white, 0.75) !important;
+  }
+}
+
+@supports(-webkit-backdrop-filter: blur()) {
+  .has-background-blur.has-background-dark {
+    background-color: rgba($dark, 0.6) !important;
+  }
+}
+
+@supports(backdrop-filter: blur()) {
+  .has-background-blur.has-background-dark {
+    background-color: rgba($dark, 0.6) !important;
+  }
+}
+
+@supports(-webkit-backdrop-filter: blur()) {
+  .has-background-blur.has-background-black-bis {
+    background-color: rgba($black-bis, 0.7) !important;
+  }
+}
+
+@supports(backdrop-filter: blur()) {
+  .has-background-blur.has-background-black-bis {
+    background-color: rgba($black-bis, 0.7) !important;
+  }
+}
+
+// COLOR CLASSES
+.has-background-primary-dark {
+  background-color: $primary-dark !important;
+}
+
+.has-background-primary-light {
+  background-color: $primary-light !important;
+}
+
+.has-background-primary-lighter {
+  background-color: $primary-lighter !important;
+}
+
+.has-text-primary {
+  color: $primary !important;
+}
+
+.has-text-primary-dark {
+  color: $primary-dark !important;
+}
+
+.has-text-primary-light {
+  color: $primary-light !important;
+}
+
+.has-text-primary-lighter {
+  color: $pilot-lighter !important;
+}
+
+.has-fill-primary {
+  fill: $primary !important;
+}
+
+.has-fill-primary-dark {
+  fill: $primary-dark !important;
+}
+
+.has-fill-primary-light {
+  fill: $primary-light !important;
+}
+
+.has-fill-primary-lighter {
+  fill: $primary-lighter !important;
+}
+
+.has-background-pilot {
+  background-color: $pilot !important;
+}
+
+.has-background-pilot-dark {
+  background-color: $pilot-dark !important;
+}
+
+.has-background-pilot-light {
+  background-color: $pilot-light !important;
+}
+
+.has-background-pilot-lighter {
+  background-color: $pilot-lighter !important;
+}
+
+.has-text-pilot {
+  color: $pilot !important;
+}
+
+.has-text-pilot-dark {
+  color: $pilot-dark !important;
+}
+
+.has-text-pilot-light {
+  color: $pilot-light !important;
+}
+
+.has-text-pilot-lighter {
+  color: $pilot-lighter !important;
+}
+
+.has-background-care {
+  background-color: $care !important;
+}
+
+.has-background-care-dark {
+  background-color: $care-dark !important;
+}
+
+.has-background-care-light {
+  background-color: $care-light !important;
+}
+
+.has-background-care-lighter {
+  background-color: $care-lighter !important;
+}
+
+.has-text-care {
+  color: $care !important;
+}
+
+.has-text-care-dark {
+  color: $care-dark !important;
+}
+
+.has-text-care-light {
+  color: $care-light !important;
+}
+
+.has-text-care-lighter {
+  color: $care-lighter !important;
+}
+
+.has-fill-care {
+  fill: $care !important;
+}
+
+.has-fill-care-dark {
+  fill: $care-dark !important;
+}
+
+.has-fill-care-light {
+  fill: $care-light !important;
+}
+
+.has-fill-care-lighter {
+  fill: $care-lighter !important;
+}
+
+.has-background-claim {
+  background-color: $claim !important;
+}
+
+.has-background-claim-dark {
+  background-color: $claim-dark !important;
+}
+
+.has-background-claim-light {
+  background-color: $claim-light !important;
+}
+
+.has-background-claim-lighter {
+  background-color: $claim-lighter !important;
+}
+
+.has-text-claim {
+  color: $claim !important;
+}
+
+.has-text-claim-dark {
+  color: $claim-dark !important;
+}
+
+.has-text-claim-light {
+  color: $claim-light !important;
+}
+
+.has-text-claim-lighter {
+  color: $claim-lighter !important;
+}
+
+.has-fill-claim {
+  fill: $claim !important;
+}
+
+.has-fill-claim-light {
+  fill: $claim-light !important;
+}
+
+.has-fill-claim-lighter {
+  fill: $claim-lighter !important;
+}
+
+.has-fill-claim-dark {
+  fill: $claim-dark !important;
+}
+
+.has-background-cyan {
+  background-color: $cyan !important;
+}
+
+.has-background-cyan-dark {
+  background-color: $cyan-dark !important;
+}
+
+.has-background-cyan-light {
+  background-color: $cyan-light !important;
+}
+
+.has-background-cyan-lighter {
+  background-color: $cyan-lighter !important;
+}
+
+.has-background-blue {
+  background-color: $blue !important;
+}
+
+.has-background-blue-dark {
+  background-color: $blue-dark !important;
+}
+
+.has-background-blue-light {
+  background-color: $blue-light !important;
+}
+
+.has-background-blue-lighter {
+  background-color: $blue-lighter !important;
+}
+
+.has-background-purple {
+  background-color: $purple !important;
+}
+
+.has-background-purple-dark {
+  background-color: $purple-dark !important;
+}
+
+.has-background-purple-light {
+  background-color: $purple-light !important;
+}
+
+.has-background-purple-lighter {
+  background-color: $purple-lighter !important;
+}
+
+.has-background-red {
+  background-color: $red !important;
+}
+
+.has-background-red-dark {
+  background-color: $red-dark !important;
+}
+
+.has-background-red-light {
+  background-color: $red-light !important;
+}
+
+.has-background-red-lighter {
+  background-color: $red-lighter !important;
+}
+
+.has-background-orange {
+  background-color: $orange !important;
+}
+
+.has-background-orange-dark {
+  background-color: $orange-dark !important;
+}
+
+.has-background-orange-light {
+  background-color: $orange-light !important;
+}
+
+.has-background-orange-lighter {
+  background-color: $orange-lighter !important;
+}
+
+.has-background-green {
+  background-color: $green !important;
+}
+
+.has-background-green-dark {
+  background-color: $green-dark !important;
+}
+
+.has-background-green-light {
+  background-color: $green-light !important;
+}
+
+.has-background-green-lighter {
+  background-color: $green-lighter !important;
+}
+
+.has-background-yellow {
+  background-color: $yellow !important;
+}
+
+.has-background-yellow-dark {
+  background-color: $yellow-dark !important;
+}
+
+.has-background-yellow-light {
+  background-color: $yellow-light !important;
+}
+
+.has-background-yellow-lighter {
+  background-color: $yellow-lighter !important;
+}
+
+.has-background-turquoise {
+  background-color: $turquoise !important;
+}
+
+.has-background-turquoise-dark {
+  background-color: $turquoise-dark !important;
+}
+
+.has-background-turquoise-light {
+  background-color: $turquoise-light !important;
+}
+
+.has-background-turquoise-lighter {
+  background-color: $turquoise-lighter !important;
+}
+
+.has-background-pink {
+  background-color: $pink !important;
+}
+
+.has-background-pink-dark {
+  background-color: $pink-dark !important;
+}
+
+.has-background-pink-light {
+  background-color: $pink-light !important;
+}
+
+.has-background-pink-lighter {
+  background-color: $pink-lighter !important;
+}
+
+.has-text-cyan {
+  color: $cyan !important;
+}
+
+.has-text-cyan-dark {
+  color: $cyan-dark !important;
+}
+
+.has-text-cyan-light {
+  color: $cyan-light !important;
+}
+
+.has-text-cyan-lighter {
+  color: $cyan-lighter !important;
+}
+
+.has-text-blue {
+  color: $blue !important;
+}
+
+.has-text-blue-dark {
+  color: $blue-dark !important;
+}
+
+.has-text-blue-light {
+  color: $blue-light !important;
+}
+
+.has-text-blue-lighter {
+  color: $blue-lighter !important;
+}
+
+.has-text-purple {
+  color: $purple !important;
+}
+
+.has-text-purple-dark {
+  color: $purple-dark !important;
+}
+
+.has-text-purple-light {
+  color: $purple-light !important;
+}
+
+.has-text-purple-lighter {
+  color: $purple-lighter !important;
+}
+
+.has-text-red {
+  color: $red !important;
+}
+
+.has-text-red-dark {
+  color: $red-dark !important;
+}
+
+.has-text-red-light {
+  color: $red-light !important;
+}
+
+.has-text-red-lighter {
+  color: $red-lighter !important;
+}
+
+.has-text-orange {
+  color: $orange !important;
+}
+
+.has-text-orange-dark {
+  color: $orange-dark !important;
+}
+
+.has-text-orange-light {
+  color: $orange-light !important;
+}
+
+.has-text-orange-lighter {
+  color: $orange-lighter !important;
+}
+
+.has-text-green {
+  color: $green !important;
+}
+
+.has-text-green-dark {
+  color: $green-dark !important;
+}
+
+.has-text-green-light {
+  color: $green-light !important;
+}
+
+.has-text-green-lighter {
+  color: $green-lighter !important;
+}
+
+.has-text-yellow {
+  color: $yellow !important;
+}
+
+.has-text-yellow-dark {
+  color: $yellow-dark !important;
+}
+
+.has-text-yellow-light {
+  color: $yellow-light !important;
+}
+
+.has-text-yellow-lighter {
+  color: $yellow-lighter !important;
+}
+
+.has-text-turquoise {
+  color: $turquoise !important;
+}
+
+.has-text-turquoise-dark {
+  color: $turquoise-dark !important;
+}
+
+.has-text-turquoise-light {
+  color: $turquoise-light !important;
+}
+
+.has-text-turquoise-lighter {
+  color: $turquoise-lighter !important;
+}
+
+.has-text-pink {
+  color: $pink !important;
+}
+
+.has-text-pink-dark {
+  color: $pink-dark !important;
+}
+
+.has-text-pink-light {
+  color: $pink-light !important;
+}
+
+.has-text-pink-lighter {
+  color: $pink-lighter !important;
+}
+
+.has-fill-cyan {
+  fill: $cyan !important;
+}
+
+.has-fill-cyan-dark {
+  fill: $cyan-dark !important;
+}
+
+.has-fill-cyan-light {
+  fill: $cyan-light !important;
+}
+
+.has-fill-cyan-lighter {
+  fill: $cyan-lighter !important;
+}
+
+.has-fill-blue {
+  fill: $blue !important;
+}
+
+.has-fill-blue-dark {
+  fill: $blue-dark !important;
+}
+
+.has-fill-blue-light {
+  fill: $blue-light !important;
+}
+
+.has-fill-blue-lighter {
+  fill: $blue-lighter !important;
+}
+
+.has-fill-purple {
+  fill: $purple !important;
+}
+
+.has-fill-purple-dark {
+  fill: $purple-dark !important;
+}
+
+.has-fill-purple-light {
+  fill: $purple-light !important;
+}
+
+.has-fill-purple-lighter {
+  fill: $purple-lighter !important;
+}
+
+.has-fill-red {
+  fill: $red !important;
+}
+
+.has-fill-red-dark {
+  fill: $red-dark !important;
+}
+
+.has-fill-red-light {
+  fill: $red-light !important;
+}
+
+.has-fill-red-lighter {
+  fill: $red-lighter !important;
+}
+
+.has-fill-orange {
+  fill: $orange !important;
+}
+
+.has-fill-orange-dark {
+  fill: $orange-dark !important;
+}
+
+.has-fill-orange-light {
+  fill: $orange-light !important;
+}
+
+.has-fill-orange-lighter {
+  fill: $orange-lighter !important;
+}
+
+.has-fill-green {
+  fill: $green !important;
+}
+
+.has-fill-green-dark {
+  fill: $green-dark !important;
+}
+
+.has-fill-green-light {
+  fill: $green-light !important;
+}
+
+.has-fill-green-lighter {
+  fill: $green-lighter !important;
+}
+
+.has-fill-yellow {
+  fill: $yellow !important;
+}
+
+.has-fill-yellow-dark {
+  fill: $yellow-dark !important;
+}
+
+.has-fill-yellow-light {
+  fill: $yellow-light !important;
+}
+
+.has-fill-yellow-lighter {
+  fill: $yellow-lighter !important;
+}
+
+.has-fill-turquoise {
+  fill: $turquoise !important;
+}
+
+.has-fill-turquoise-dark {
+  fill: $turquoise-dark !important;
+}
+
+.has-fill-turquoise-light {
+  fill: $turquoise-light !important;
+}
+
+.has-fill-turquoise-lighter {
+  fill: $turquoise-lighter !important;
+}
+
+.has-fill-pink {
+  fill: $pink !important;
+}
+
+.has-fill-pink-dark {
+  fill: $pink-dark !important;
+}
+
+.has-fill-pink-light {
+  fill: $pink-light !important;
+}
+
+.has-fill-pink-lighter {
+  fill: $pink-lighter !important;
+}
+
+.has-text-success-dark {
+  color: $success-dark !important;
+}
+
+.has-text-success-lighter {
+  color: $success-lighter !important;
+}
+
+.has-text-info-dark {
+  color: $info-dark !important;
+}
+
+.has-text-info-lighter {
+  color: $info-lighter !important;
+}
+
+.has-text-warning-dark {
+  color: $warning-dark !important;
+}
+
+.has-text-warning-lighter {
+  color: $warning-lighter !important;
+}
+
+.has-text-danger-dark {
+  color: $danger-dark !important;
+}
+
+.has-text-danger-lighter {
+  color: $danger-lighter !important;
+}
+
+.has-fill-success {
+  fill: $success !important;
+}
+
+.has-fill-success-light {
+  fill: mix(white, $success, 30) !important;
+}
+
+.has-fill-success-dark {
+  fill: $success-dark !important;
+}
+
+.has-fill-info {
+  fill: $info !important;
+}
+
+.has-fill-info-light {
+  fill: mix(white, $info, 30) !important;
+}
+
+.has-fill-success-dark {
+  fill: $info-dark !important;
+}
+
+.has-fill-warning {
+  fill: $warning !important;
+}
+
+.has-fill-warning-light {
+  fill: mix(white, $warning, 30) !important;
+}
+
+.has-fill-success-dark {
+  fill: $warning-dark !important;
+}
+
+.has-fill-danger {
+  fill: $danger !important;
+}
+
+.has-fill-danger-light {
+  fill: mix(white, $danger, 30) !important;
+}
+
+.has-fill-success-dark {
+  fill: $danger-dark !important;
+}
+
+.has-fill-black {
+  fill: $black !important;
+}
+
+.has-fill-black-bis {
+  fill: $black-bis !important;
+}
+
+.has-fill-black-ter {
+  fill: $black-ter !important;
+}
+
+.has-fill-dark {
+  fill: $dark !important;
+}
+
+.has-fill-grey-darker {
+  fill: $grey-darker !important;
+}
+
+.has-fill-grey-dark {
+  fill: $grey-dark !important;
+}
+
+.has-fill-grey {
+  fill: $grey !important;
+}
+
+.has-fill-grey-light {
+  fill: $grey-light !important;
+}
+
+.has-fill-grey-lighter {
+  fill: $grey-lighter !important;
+}
+
+.has-fill-white-ter {
+  fill: $white-ter !important;
+}
+
+.has-fill-white-bis {
+  fill: $white-bis !important;
+}
+
+.has-fill-white {
+  fill: $white !important;
+}
+
+@import "css4-vars.scss";
